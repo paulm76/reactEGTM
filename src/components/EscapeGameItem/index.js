@@ -5,7 +5,7 @@ import { Button, List, Icon, Label } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 import * as routes from '../../constants/routes';
-import { db } from '../../mysql';
+//import { db } from '../../mysql';
 
 const EscapeGameRow = styled.div`
   margin: 10px;

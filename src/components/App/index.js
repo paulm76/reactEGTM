@@ -21,17 +21,17 @@ class App extends Component {
     super(props);
 
     this.state = {
-      teams: null,
+      teams: [
+        {nom:'Paul\'s Team',admin:'Paul',escapeGame: 'La defense',room:'ljqershbrf',placesMax:6,placesOccupe:2},
+        {nom:'Mathieu\'s Team',admin:'Mathieu',escapeGame: 'toto',room:'titi',placesMax:4,placesOccupe:3},
+        {nom:'Seb\'s Team',admin:'Seb',escapeGame: 'bar',room:'foo',placesMax:8,placesOccupe:5},
+        {nom:'Jean-Paul\'s Team',admin:'Jean-Paul',escapeGame: 'res',room:'err',placesMax:12,placesOccupe:7}
+      ],
       teamsLoading: false,
       teamsError: null,
-
-      teamSelectedInit: null,
-      teamSelected: null,
-      teamSelectedLoading: null,
     };
 
     this.onFetchTeams = this.onFetchTeams.bind(this);
-    this.onFetchReadings = this.onFetchReadings.bind(this);
   }
 /*
   componentDidMount() {
@@ -49,26 +49,15 @@ class App extends Component {
   onFetchTeams() {
     this.setState({ teamsLoading: true })
 
-    axios(`${HN_URL}?tags=front_page`)
-      .then(result => this.setState((prevState) => ({
-        teams: result.data.hits,
-        teamsLoading: false,
-      })))
-      .catch(error => this.setState({
-        teamsError: error,
-        teamsLoading: false,
-      }));
-  }
+    this.setState({ teams: [
+        {nom:'Paul\'s Team',admin:'Paul',escapeGame: 'La defense',room:'ljqershbrf',placesMax:6,placesOccupe:2},
+        {nom:'Mathieu\'s Team',admin:'Mathieu',escapeGame: 'toto',room:'titi',placesMax:4,placesOccupe:3},
+        {nom:'Seb\'s Team',admin:'Seb',escapeGame: 'bar',room:'foo',placesMax:8,placesOccupe:5},
+        {nom:'Jean-Paul\'s Team',admin:'Jean-Paul',escapeGame: 'res',room:'err',placesMax:12,placesOccupe:7}
+      ]
+    });
 
-  onFetchReadings(authUser) {
-    this.setState(() => ({ readingsLoading: true }));
-/*
-    db.onGetReadings(authUser, (snapshot) =>
-      this.setState(() => ({
-        teamSelected: snapshot.val(),
-        teamSelectedLoading: false,
-      }))
-    );*/
+    this.setState({ teamsLoading: false });
   }
 
   render() {
@@ -114,4 +103,5 @@ class App extends Component {
   }
 }
 
-export default withAuthentication(App);
+//export default withAuthentication(App);
+export default App;

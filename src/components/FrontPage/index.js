@@ -1,10 +1,10 @@
 import React from 'react';
 import { Loader } from 'semantic-ui-react';
 
-import TeamsList from '../TeamsList';
+import TeamsList from '../TeamList';
+//import Filter from '../Filter';
 
 const FrontPage = ({
-  teamSelected,
   teams,
   teamsLoading,
   teamsError,
@@ -21,18 +21,10 @@ const FrontPage = ({
     return <p>Uuups, there are no more front page stories for you.</p>;
   }
 
-  const readableTeams = teamSelected
-    ? teams.filter(team => !teamSelected[team.objectID])
-    : teams;
-
-  if (!readableTeams.length) {
-    return <p>Uuups, there are no more front page stories for you.</p>;
-  }
-
-  return <TeamsList
-    teams={readableTeams}
-    isFrontPage={true}
-  />
+  return(<TeamsList
+      teams={teams}
+      isFrontPage={true}
+      />);
 }
 
 export default FrontPage;

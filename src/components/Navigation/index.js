@@ -8,32 +8,31 @@ import * as routes from '../../constants/routes';
 
 const Navigation = (props, context) =>
   <div>
-    {context.authUser
-      ? <NavigationAuth />
-      : <NavigationNonAuth />
-    }
+       <NavigationNonAuth />
   </div>
-
+/*
 Navigation.contextTypes = {
   authUser: PropTypes.object,
 };
-
+*/
 const NavigationAuth = () =>
   <Menu secondary>
     <Menu.Item>
       <Link to={routes.FRONTPAGE}>EGTM</Link>
     </Menu.Item>
-
     <Menu.Item position="right">
+      <Link to={routes.ESCPAPEGAME}>Les escape games</Link>
+    </Menu.Item>
+    <Menu.Item>
       <Link to={routes.TEAMS}>Mes equipes</Link>
     </Menu.Item>
-    <Menu.Item position="right">
-      <Link tp={routes.GAIN_SIMULATOR}>Simulateur de gains</Link>
+    <Menu.Item>
+      <Link to={routes.GAIN_SIMULATOR}>Simulateur de gains</Link>
     </Menu.Item>
-    <Menu.Item position="right">
+    <Menu.Item>
       <Link to={routes.ACCOUNT}>Mon compte</Link>
     </Menu.Item>
-    <Menu.Item position="right">
+    <Menu.Item>
       <SignOutButton />
     </Menu.Item>
   </Menu>
@@ -43,12 +42,14 @@ const NavigationNonAuth = () =>
     <Menu.Item>
       <Link to={routes.FRONTPAGE}>EGTM</Link>
     </Menu.Item>
-
     <Menu.Item position="right">
-      <Link tp={routes.GAIN_SIMULATOR}>Simulateur de gains</Link>
+      <Link to={routes.ESCPAPEGAME}>Les escape games</Link>
     </Menu.Item>
-    <Menu.Item position="right">
-      <Link to={routes.SIGN_IN}>Sign In</Link>
+    <Menu.Item>
+      <Link to={routes.GAIN_SIMULATOR}>Simulateur de gains</Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link to={routes.SIGN_IN}>Se connecter</Link>
     </Menu.Item>
   </Menu>
 
