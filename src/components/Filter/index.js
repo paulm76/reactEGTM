@@ -8,7 +8,7 @@ import cityArray from '../../constants/cityArray'
 import themeArray from '../../constants/themeArray';
 import difficultyArray from '../../constants/difficultyArray';
 
-const GainSimulator = ({
+const Filter = ({
   escapeGame,
   room,
   prix,
@@ -56,4 +56,4 @@ const GainSimulator = ({
 	);
 }
 
-export default GainSimulator
+export default Filter
