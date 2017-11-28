@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  Link,  withRouter } from 'react-router-dom';
-import { Input, Button } from 'semantic-ui-react';
+import { Input, Button} from 'semantic-ui-react';
 
 import Form from '../Form';
 //import { auth, db } from '../../firebase';
