@@ -8,7 +8,8 @@ import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget';
 import AccountPage from '../Account';
-import GainSimulator from '../GainSimulator'
+import GainSimulator from '../GainSimulator';
+import Footer from '../Footer';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';
 
@@ -97,6 +98,8 @@ class App extends Component {
             exact path={routes.GAIN_SIMULATOR}
             component={GainSimulator}
           />
+
+          <Footer />
         </div>
       </Router>
     );
