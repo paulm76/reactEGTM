@@ -6,6 +6,7 @@ import EscapeGameList from '../EscapeGameList';
 import FilterForm from '../FilterForm';
 import cityArray from '../../constants/cityArray'
 import themeArray from '../../constants/themeArray';
+import difficultyArray from '../../constants/difficultyArray';
 
 const GainSimulator = ({
   escapeGame,
@@ -27,6 +28,12 @@ const GainSimulator = ({
 	  <Label for="citySelect">Ville</Label>
 	  <Select id="citySelect" onChange={this.onSelectCity} options={cityArray}/>
 
+	  <Label for="themeSelect">Theme</Label>
+	  <Select id="themeSelect" onChange={this.onSelectTheme} options={themeArray}/>
+
+	  <Label for="difficultySelect">Difficulté</Label>
+	  <Select id="difficultySelect" onChange={this.onSelectDifficulty} options={difficultyArray}/>
+
 	  <Label for="priceMinInput">Prix minimum</Label>
 	  <Input id="priceMinInput" type="number" min="0" />
 
@@ -44,9 +51,6 @@ const GainSimulator = ({
 
 	  <Label for="dateInput">Date</Label>
 	  <Input id="dateInput" type="date" />
-
-	  <Label for="themeSelect">Theme</Label>
-	  <Select id="themeSelect" onChange={this.onSelectTheme} options={themeArray}/>
 
 	</FilterForm>
 	);
