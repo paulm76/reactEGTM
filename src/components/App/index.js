@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import Navigation from '../Navigation';
+import Filter from '../Filter';
 import FrontPage from '../FrontPage';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
@@ -72,9 +73,9 @@ class App extends Component {
           <Route
             exact path={routes.FRONTPAGE}
             component={() =>
-              <FrontPage
-                { ...this.state }
-              />
+                <FrontPage
+                  { ...this.state }
+                />
             }
           />
 

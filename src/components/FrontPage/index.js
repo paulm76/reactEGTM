@@ -2,7 +2,8 @@ import React from 'react';
 import { Loader } from 'semantic-ui-react';
 
 import TeamsList from '../TeamList';
-//import Filter from '../Filter';
+import Filter from '../Filter';
+import Footer from '../Footer';
 
 const FrontPage = ({
   teams,
@@ -21,10 +22,15 @@ const FrontPage = ({
     return <p>Uuups, there are no more front page stories for you.</p>;
   }
 
-  return(<TeamsList
+  return(
+      <div>
+      <Filter />
+      <TeamsList
       teams={teams}
       isFrontPage={true}
-      />);
+      />
+      </div>
+  );
 }
 
 export default FrontPage;
