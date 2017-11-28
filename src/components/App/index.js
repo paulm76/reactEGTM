@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
+import PageNotFound from '../PageNotFound';
 import Navigation from '../Navigation';
 import FrontPage from '../FrontPage';
 import SignUpPage from '../SignUp';
@@ -12,6 +13,7 @@ import GainSimulator from '../GainSimulator';
 import Footer from '../Footer';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';
+
 
 import './index.css';
 
@@ -68,36 +70,39 @@ class App extends Component {
           <Navigation />
 
           <hr/>
+          <Switch>
+            <Route
+              exact path={routes.FRONTPAGE}
+              component={() =>
+                <FrontPage
+                  { ...this.state }
+                />
+              }
+            />
 
-          <Route
-            exact path={routes.FRONTPAGE}
-            component={() =>
-              <FrontPage
-                { ...this.state }
-              />
-            }
-          />
+            <Route
+              exact path={routes.SIGN_UP}
+              component={SignUpPage}
+            />
+            <Route
+              exact path={routes.SIGN_IN}
+              component={SignInPage}
+            />
+            <Route
+              exact path={routes.PASSWORD_FORGET}
+              component={PasswordForgetPage}
+            />
+            <Route
+              exact path={routes.ACCOUNT}
+              component={AccountPage}
+            />
+            <Route
+              exact path={routes.GAIN_SIMULATOR}
+              component={GainSimulator}
+            />
 
-          <Route
-            exact path={routes.SIGN_UP}
-            component={SignUpPage}
-          />
-          <Route
-            exact path={routes.SIGN_IN}
-            component={SignInPage}
-          />
-          <Route
-            exact path={routes.PASSWORD_FORGET}
-            component={PasswordForgetPage}
-          />
-          <Route
-            exact path={routes.ACCOUNT}
-            component={AccountPage}
-          />
-          <Route 
-            exact path={routes.GAIN_SIMULATOR}
-            component={GainSimulator}
-          />
+            <Route component={PageNotFound}/>
+          </ Switch>
 
           <Footer />
         </div>
