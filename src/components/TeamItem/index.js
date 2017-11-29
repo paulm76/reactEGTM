@@ -11,17 +11,18 @@ const TeamItem = ({
   isFrontPage,
   isReadingsPage,
 }) =>
-  <List.Item>
+  <List.Item style={{ width: '25%', 'border-top': 'none', 'padding-top': '5px' }}>
     <List.Content>
 
       <List.Description as="div">
         <List.Header as="h4">
           {isFrontPage}
-
-          <p>{team.escapeGame}</p>
+          <p>Escape Game : {team.escapeGame}</p>
         </List.Header>
-
+          
       </List.Description>
+          <p><br />Room : {team.room} <br />
+          Places libres : {team.placesMax - team.placesOccupe}</p>
     </List.Content>
   </List.Item>
 /*
