@@ -6,24 +6,32 @@ import styled from 'styled-components';
 
 import * as routes from '../../constants/routes';
 
-const TeamItem = ({
-  team,
-  isFrontPage,
-  isReadingsPage,
-}) =>
-  <List.Item>
-    <List.Content>
+class TeamItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-      <List.Description as="div">
-        <List.Header as="h4">
-          {isFrontPage}
+  render () {
+    const team = this.props.team;
 
-          <p>{team.escapeGame}</p>
-        </List.Header>
+    return(
+      <List.Item style={{ width: '25%', 'border-top': 'none', 'padding-top': '5px' }}>
+        <List.Content>
 
-      </List.Description>
-    </List.Content>
-  </List.Item>
+          <List.Description as="div">
+            <List.Header as="h4">
+              {this.props.isFrontPage}
+              <p>Escape Game : {team.escapeGame}</p>
+            </List.Header>
+
+          </List.Description>
+              <p><br />Room : {team.room} <br />
+              Places libres : {team.placesMax - team.placesOccupe}</p>
+        </List.Content>
+      </List.Item>
+    )
+  }
+}
 /*
 TeamItem.contextTypes = {
   authUser: PropTypes.object,

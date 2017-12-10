@@ -29,7 +29,8 @@ class App extends Component {
         {nom:'Paul\'s Team',admin:'Paul',escapeGame: 'La defense',room:'ljqershbrf',placesMax:6,placesOccupe:2},
         {nom:'Mathieu\'s Team',admin:'Mathieu',escapeGame: 'toto',room:'titi',placesMax:4,placesOccupe:3},
         {nom:'Seb\'s Team',admin:'Seb',escapeGame: 'bar',room:'foo',placesMax:8,placesOccupe:5},
-        {nom:'Jean-Paul\'s Team',admin:'Jean-Paul',escapeGame: 'res',room:'err',placesMax:12,placesOccupe:7}
+        {nom:'Jean-Paul\'s Team',admin:'Jean-Paul',escapeGame:'res',room:'err',placesMax:12,placesOccupe:7},
+        {nom:'Aurore\'s Team',admin:'Aurore',escapeGame:'Paris 2',room:'avion',placesMax:8,placesOccupe:2}
       ],
       teamsLoading: false,
       teamsError: null,

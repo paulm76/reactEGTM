@@ -2,8 +2,9 @@ import React from 'react';
 import { Loader } from 'semantic-ui-react';
 
 import TeamsList from '../TeamList';
+import TeamsGrid from '../TeamGrid';
 import Filter from '../Filter';
-import Footer from '../Footer';
+import FrontPageForm from '../FrontPageForm';
 
 const FrontPage = ({
   teams,
@@ -23,13 +24,13 @@ const FrontPage = ({
   }
 
   return(
-      <div>
+    <FrontPageForm>
       <Filter />
       <TeamsList
       teams={teams}
       isFrontPage={true}
       />
-      </div>
+    </FrontPageForm>
   );
 }
 

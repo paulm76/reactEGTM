@@ -3,3 +3,9 @@
 .app {
   margin: 20px;
 }
+
+.divided{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
