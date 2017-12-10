@@ -11,6 +11,7 @@ import PasswordForgetPage from '../PasswordForget';
 import AccountPage from '../Account';
 import GainSimulator from '../GainSimulator';
 import Footer from '../Footer';
+import TeamPage from '../TeamPage';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';
 
@@ -97,6 +98,10 @@ class App extends Component {
             <Route
               exact path={routes.GAIN_SIMULATOR}
               component={GainSimulator}
+            />
+            <Route
+              exact path={routes.TEAM_PAGE}
+              component={TeamPage}
             />
 
             <Route component={PageNotFound}/>
