@@ -12,6 +12,7 @@ import AccountPage from '../Account';
 import GainSimulator from '../GainSimulator';
 import Footer from '../Footer';
 import TeamPage from '../TeamPage';
+import RoomPage from '../RoomPage';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';
 
@@ -104,7 +105,10 @@ class App extends Component {
               exact path={routes.TEAM_PAGE}
               component={TeamPage}
             />
-
+            <Route
+              exact path={routes.ROOM_PAGE}
+              component={RoomPage}
+            />
             <Route component={PageNotFound}/>
           </ Switch>
 

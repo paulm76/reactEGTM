@@ -1,8 +1,6 @@
 import React from 'react';
 import { Loader } from 'semantic-ui-react';
-
 import TeamsList from '../TeamList';
-import TeamsGrid from '../TeamGrid';
 import Filter from '../Filter';
 import FrontPageForm from '../FrontPageForm';
 
